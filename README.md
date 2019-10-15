@@ -11,6 +11,12 @@ This project was completed in line with standards provided by [Microverse](https
 * Ruby 2.4.0
 * Rails 5.2.3
 * PostgreSQL
+* Cucumber & Capybara (Integration tests)
+*	RSpec-rails (Unit test)
+* Devise / Omniauth-facebook (authentication)
+* Bootstrap (UI)
+* Guard / Figaro
+* FactoryBot (FactoryGirl) / Faker
 
 ##### Clone Repository
 ```git clone https://github.com/johnsonsirv/facebook-clone.git```
