@@ -67,6 +67,7 @@ group :development do
 	gem 'guard'
 	gem 'guard-rspec', require: false
 	gem 'guard-cucumber'
+	gem 'bullet', '~> 5.7', '>= 5.7.5'
 end
 
 group :test do
