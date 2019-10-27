@@ -1,7 +1,7 @@
 <div class="shortcut-left">
 		<div class="user-navlink p-1">
 			<span class="gravatar-20"> <%= gravatar_for(current_user, size: 20) %> </span> 
-			<span class="pr-5"> <%= link_to current_user.fullname, current_user, class: "text text-muted", title: "Profile" %> </span>
+			<span class="pr-5"> <%= link_to "#{current_user.fullname}", current_user, class: "text text-muted", title: "Profile" %> </span>
 		</div>
 		<div class="newsfeed-link mt-3 p-1 py-1">
 			<span> <%= image_tag "icon-photo-video.png" %> </span> 

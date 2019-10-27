@@ -6,5 +6,11 @@ Rails.application.routes.draw do
 	resources :users, only: [:index, :show]
 	resources :posts, only: [:index,  :create, :edit, :update, :destroy]
 	
+	unauthenticated do
+		as :user do
+			root to: 'devise/registrations#new'
+		end
+	end
+	
 	root to: 'posts#index'
 end
