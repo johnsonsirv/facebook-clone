@@ -1,0 +1,8 @@
+<div class="dropdown">
+<a class="toggle-btn" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">...</a>
+		<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+			<%= show_post_actions_for(post) || unauthenticated_post_actions %>
+			<div class="dropdown-divider"></div>
+			<%= link_to 'See Translation', '#', class: "dropdown-item" %>
+		</div>
+</div>
