@@ -1,5 +1,5 @@
 <%= form_for(@post) do |f| %>
-	<div class="card">
+	<div class="card new-post">
 		<div class="card-header py-1"> Create Post </div>
 			<div class="card-body p-0">
 				<%= f.text_area :content, placeholder: "What's on your mind, #{current_user.fullname}?", 

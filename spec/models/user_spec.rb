@@ -5,7 +5,7 @@ RSpec.describe User, type: :model do
 		it { should have_many(:posts)}
 	end
 	
-	context 'Validations' do
-		
+	it 'should build user image_link before save' do
+		it { should use_before_callback(:generate_gravatar_for_user) }
 	end
 end

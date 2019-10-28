@@ -40,8 +40,13 @@ class PostsController < ApplicationController
 	end
 	
 	def post_update(post_params)
-		set_flash_notice 'notice', @post.update_post(post_params)
-		redirect_to root_path
+		if @post.user.eql?(current_user)
+			set_flash_notice 'notice', @post.update_post(post_params)
+			redirect_to root_path
+		else
+			set_flash_notice 'alert', 'Permission denied for resource'
+			redirect_to root_path
+		end
 	end
 	
 	def find_post
