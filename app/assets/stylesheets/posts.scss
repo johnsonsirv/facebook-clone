@@ -22,7 +22,7 @@
 	.post-like {img {border-radius: 50%; } }
 }
 
-.gravatar { width: 44px; height: 44px;}
+.gravatar-44 { img{width: 44px; height: 44px; border-radius: 50%;} }
 .post-author { width: 75%; height: 52px; font-weight: bold; font-size: 1.1em;
 	a { color: $default-link-color}
 	p {font-size: 12px;  font-weight: normal;}
@@ -43,7 +43,7 @@
 }
 
 .comments {}
-.comments-gravatar { img{ width: 30px; height: 30px;}  width: 30px; height: 30px; border-radius: 50%;}
+.gravatar-30 { img{ width: 30px; height: 30px; border-radius: 50%;} }
 .comment-author { font-weight: bold; font-size: 1em; 
 	a { color: $default-link-color;}
 }

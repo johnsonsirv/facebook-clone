@@ -1,6 +1,6 @@
 <span class="navbar-gravatar"> <%= gravatar_for(current_user, size: 30) %> </span> 
 <li class="nav-item">
-	<%= link_to "#{current_user.firstname.capitalize!}", current_user, class: "nav-link"  %>
+	<%= link_to current_user.firstname.capitalize, current_user, class: "nav-link"  %>
 </li>
 <li class="nav-item">
 	<%= link_to 'Home', root_path, class: "nav-link" %>

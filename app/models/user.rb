@@ -13,7 +13,7 @@ class User < ApplicationRecord
 	
 	
 	def fullname
-		"#{firstname.capitalize!} #{lastname.capitalize!}"
+		"#{firstname} #{lastname}"
 	end
 	
 	def add_new_post(post_params)
