@@ -5,7 +5,12 @@ RSpec.describe User, type: :model do
 		it { should have_many(:posts)}
 	end
 	
-	it 'should build user image_link before save' do
-		it { should use_before_callback(:generate_gravatar_for_user) }
+	it 'callbacks generate_gravatar_for_user before create' do
+		@user = FactoryBot.build(:user)
+		expect(@user.image_link).to be_nil
+		
+		@user.save
+		expect(@user.image_link).to_not be_nil
 	end
+	
 end
