@@ -45,3 +45,11 @@ end
 Then("I should also see my timeline") do
    expect(page).to have_current_path root_path
 end
+
+When("I access post timeline") do
+ visit posts_path
+end
+
+Then("I should be redirected to login") do
+  expect(page).to have_current_path new_user_session_path
+end

@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
-	context 'redirect unauthenticated users to signup' do
-		it { should route(:get, '/posts').
-			to(action: :new) }
-	end
+	
+		it 'post#index redirects to signup for unauthenticated user' do
+				
+		end
+
 end

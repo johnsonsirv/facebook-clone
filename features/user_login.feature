@@ -19,3 +19,7 @@ Scenario: Login through the navigation form
 	When I access navbar login form
 	And I submit correct credentials through the navbar form
 	Then I should also see my timeline
+	
+Scenario: Access Restricted pages
+	When I access post timeline
+	Then I should be redirected to login
