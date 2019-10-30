@@ -21,8 +21,28 @@ This project was completed in line with standards provided by [Microverse](https
 ##### Clone Repository
 ```git clone https://github.com/johnsonsirv/facebook-clone.git```
 
+###### 1. Database setup
+in your terminal run
+> ``rake db:setup``
+>
+> ``rake db:migrate db:test:prepare``
 
-###### Deployment
+###### 2. Run test suite
+
+###### 1.1 integration level tests (cuke scenarios location ``features/``)
+
+in your terminal run 
+
+```cucumber features```
+
+###### 1.2 unit level tests (specs location ``spec/``)
+
+in your terminal run 
+
+``` rspec spec```
+
+
+##### 3. Deployment
 
 Run ```rails server```
 

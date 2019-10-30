@@ -9,7 +9,7 @@ gem 'rails', '~> 5.2.3'
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
-e
+
 # UI
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
@@ -67,6 +67,7 @@ group :development do
 	gem 'guard'
 	gem 'guard-rspec', require: false
 	gem 'guard-cucumber'
+	gem 'bullet', '~> 5.7', '>= 5.7.5'
 end
 
 group :test do
@@ -78,6 +79,7 @@ group :test do
   gem 'selenium-webdriver'
 	gem 'webdrivers', '~> 4.0'
 	gem 'shoulda-matchers'
+	gem 'shoulda-callback-matchers', '~> 1.1.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

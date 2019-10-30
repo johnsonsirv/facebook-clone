@@ -1,0 +1,11 @@
+<div class="mt-1">
+	<div class="py-1 d-flex flex-row">
+			<div class="gravatar-30 mr-2 rounded-circle"> <%= gravatar_for(current_user, size: 30) %> </div>
+			<div class="comment-body p-0"> 
+				<span> <textarea placeholder="Write a comment. (Milestone 4)", class="p-2" > </textarea></span> 
+			</div>
+	</div>
+</div>
+<div class="float-right"> 
+		<span> <%= link_to 'Comment', "#", class: "btn btn-sm btn-comment mr-2" %> </span>
+</div>

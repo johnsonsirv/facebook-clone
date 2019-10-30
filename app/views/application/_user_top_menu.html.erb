@@ -1,0 +1,21 @@
+<span class="navbar-gravatar"> <%= gravatar_for(current_user, size: 30) %> </span> 
+<li class="nav-item">
+	<%= link_to current_user.firstname.capitalize, current_user, class: "nav-link"  %>
+</li>
+<li class="nav-item">
+	<%= link_to 'Home', root_path, class: "nav-link" %>
+</li>
+<li class="nav-item"> <%= link_to 'Create', '#', class: "nav-link" %> </li>
+<li class="nav-item"> <%= link_to 'Find Friends', users_path, class: "nav-link" %> </li>
+<li class="nav-item"> <%= link_to content_tag(:i, '', class: "fa fa-users"), '#', title: 'Friend requests', class: "nav-link"  %> </li>
+<li class="nav-item"> <%= link_to content_tag(:i, '', class: "fa fa-bell"), '#', title: 'Notifications', class: "nav-link"  %> </li>
+<li class="nav-item"> <%= link_to content_tag(:i, '', class: "fa fa-question-circle"), '#', title: 'Notifications', class: "nav-link"  %> </li>
+<li class="nav-item dropdown">
+	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	</a>
+	<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+		<%= link_to 'My Profile', current_user, class: "dropdown-item" %>
+		<div class="dropdown-divider"></div>
+		<%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+	</div>
+</li>

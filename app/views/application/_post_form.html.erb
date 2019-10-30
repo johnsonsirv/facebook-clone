@@ -1,0 +1,21 @@
+<%= form_for(@post) do |f| %>
+	<div class="card new-post">
+		<div class="card-header py-1"> Create Post </div>
+			<div class="card-body p-0">
+				<%= f.text_area :content, placeholder: "What's on your mind, #{current_user.fullname}?", 
+				class: "form-control",	rows:"3" %>
+			</div>
+			<div class="card-footer text-center py-2 px-3"> 
+				<span class="pr-3"> <%= image_tag "icon-photo-video.png" %> 
+				<%= link_to 'Photo/Video', '#', data:{confirm: "Thank you for using our app! Unfortunately adding multimedia posts will 							be implemented in future release."} %>
+				</span>
+				<span class="pr-3"><%= image_tag "icon-user-tag.png" %>
+					<%= link_to 'Tag Friends', '#',  data:{confirm: "Thank you for using our app! Unfortunately tagging friends to post will be implemented in future release."} %>
+					</span>
+				<span class="pr-3"><%= image_tag "icon-smile.png" %>
+					<%= link_to 'Feeling/Activity', '#',  data:{confirm: "Thank you for using our app! Unfortunately adding feelings/activity to your posts will be implemented in future release."} %>
+				</span>
+				<span> <%= f.submit "Post", title: "Post", class: "btn btn-sm custom-default-btn" %> </span>
+			</div>
+	</div>
+<% end %>
