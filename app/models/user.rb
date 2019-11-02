@@ -20,6 +20,10 @@ class User < ApplicationRecord
 		posts.create(post_params)
 	end
 	
+	def add_new_comment(comment_params)
+		comments.create(comment_params)
+	end
+	
 	private
 	def generate_gravatar_for_user
     self.image_link = "https://gravatar.com/avatar/#{Digest::MD5.hexdigest(email)}"
