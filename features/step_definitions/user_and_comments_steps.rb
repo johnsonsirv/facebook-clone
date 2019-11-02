@@ -8,7 +8,7 @@ end
 
 When("I submit new comment using comment form") do
 	@comment = FactoryBot.build(:comment)
-  within '.new-comment' do
+  within '.comment-editor' do
 		fill_in "comment[content]", with: @comment.content
 		click_button 'Comment'
 	end
