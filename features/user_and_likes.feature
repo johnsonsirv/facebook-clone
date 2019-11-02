@@ -6,7 +6,7 @@ Feature: User and likes
 Background:
 	Given a user with email "demouser@onet.com" is already logged in
 	And I can see a post in my timeline
-	And I can see a comemnt for this post
+	And I can see a comment for this post
 
 Scenario: Like a Post
 	When I like post

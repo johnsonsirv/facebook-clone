@@ -2,7 +2,9 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   context "Associations" do
-		it { should have_many(:posts)}
+		it { should have_many(:posts).dependent(:destroy)}
+		it { should have_many(:comments).dependent(:destroy) }
+		it { should have_many(:likes).dependent(:destroy) }
 	end
 	
 	it 'callbacks generate_gravatar_for_user before create' do
