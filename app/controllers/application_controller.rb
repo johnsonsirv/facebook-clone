@@ -11,6 +11,9 @@ class ApplicationController < ActionController::Base
 		@post = Post.new
 	end
 	
+	def back_with_anchored_resource(anchor: '')
+    "#{request.referrer}##{anchor}"
+  end
 	
 	protected
 	
