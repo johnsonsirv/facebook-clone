@@ -11,7 +11,6 @@ class Post < ApplicationRecord
 	
 	
 	def self.timeline_posts_for(user)
-		#in milestone 5>> modify to include posts from current_user's friendsr)
 		authored_by(user).order(updated_at: :desc)
 	end
 	
