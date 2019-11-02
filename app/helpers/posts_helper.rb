@@ -41,4 +41,26 @@ module PostsHelper
 	def unauthenticated_post_actions
 		content_tag(:a, 'No actions', href: '#', class: 'dropdown-item')
 	end
+	
+	def show_total_post_comments_for(post)
+		return pluralize(post.comments.count, 'Comment') if post.comments.any?
+		''
+	end
+	
+	# def show_likeable_button_for_resource(resource)
+	# 	return unlike_button_for(resource) if liked_by_user?(resource)
+	# 	like_button_for(resource)
+	# end
+	
+	# def like_button_for(resource)
+	# 	link_to content_tag(:i, "Like", class:"fa fa-thumbs-up pr-2"), 
+	# 		likes_path(post_id: resource.id), method: :post,
+	# 		class:"btn btn-sm social-btn"
+	# end
+	
+	# def unlike_button_for(resource)
+	# 	link_to content_tag(:i, "Unlike", class:"fa fa-thumbs-up pr-2"), 
+	# 		likes_path(post_id: resource.id), method: :post,
+	# 		class:"btn btn-sm unlike-btn"
+	# end
 end

@@ -18,6 +18,10 @@ Then("I should see my comment for first post in timeline") do
  expect(page).to have_content(@comment.content)
 end
 
+Given("I have added a comment to the first post") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
 When("I delete comment") do
   pending # Write code here that turns the phrase above into concrete actions
 end

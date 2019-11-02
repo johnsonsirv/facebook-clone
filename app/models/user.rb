@@ -2,7 +2,8 @@ class User < ApplicationRecord
   before_create { email.strip.downcase! }
   before_create { generate_gravatar_for_user }
 	
-	has_many :posts
+	has_many :posts, dependent: :destroy
+	has_many :comments, dependent: :destroy
 	
 	scope :all_except, ->(user) { where.not(id: user) }
 	

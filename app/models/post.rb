@@ -1,8 +1,10 @@
 class Post < ApplicationRecord
 	
 	belongs_to :user
+	has_many :comments, dependent: :destroy
 	
-	scope :authored_by, ->(user) {where(user_id: user).includes(:user).order(updated_at: :desc)}
+	scope :authored_by, ->(user) {where(user_id: user).includes(:user).order(updated_at: :desc).
+			includes(:comments) }
 	
 	validates :content, presence: true
 	

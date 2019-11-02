@@ -12,6 +12,6 @@ Scenario: Add new Comment
 	Then I should see my comment for first post in timeline
 
 Scenario: Remove my comment
-	Give I have added a comment to the first post
+	Given I have added a comment to the first post
 	When I delete comment
 	Then post comment should no longer exist

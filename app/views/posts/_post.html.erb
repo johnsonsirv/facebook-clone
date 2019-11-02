@@ -13,12 +13,12 @@
 				<p><%= post.content %></p>
 				<p class="text text-muted">
 					<span class="post-like"> <%= image_tag "icon-like.png" %> 2 </span> 
-					<span class="float-right"> 14 Comments  </span> 
+					<span class="float-right"> <%= show_total_post_comments_for post %>  </span> 
 				</p>
 			</div>
 			<div class="card-footer text-center py-2 px-3"> 
 				<span class="pr-4"> 
-					<%= link_to content_tag(:i, "Like", class:"fa fa-thumbs-up pr-2"), '#', class:"btn btn-sm social-btn" %>
+					<%= link_to content_tag(:i, "Comments", class:"fa fa-comments pr-2"), '#', class:"btn btn-sm social-btn" %> 
 				</span>
 				<span class="pr-4">
 					<%= link_to content_tag(:i, "Comments", class:"fa fa-comments pr-2"), '#', class:"btn btn-sm social-btn" %> 
@@ -28,7 +28,10 @@
 				</span>
 			</div>
 			
-			<%= render 'comments', post: post %>
+			<div class="card-body m-0">
+				<%= render post.comments %>
+				<div class="comment-editor mt-3"> <%= render 'comment_form', post: post %> </div>
+			</div>
 	</div>
 
 
