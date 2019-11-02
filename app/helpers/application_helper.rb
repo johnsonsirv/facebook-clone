@@ -18,8 +18,8 @@ module ApplicationHelper
     image_tag(gravatar_url, alt: user.fullname)
   end
 	
-	# def liked_by_user?(resource)
-	# 	resource.likes.
-	# 		find_by(user: current_user)
-	# end
+	def liked_by_user?(resource)
+		resource.likes.
+			find_by(user: current_user)
+	end
 end

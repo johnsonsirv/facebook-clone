@@ -12,13 +12,13 @@
 			<div class="card-body post-body mx-2 p-1">
 				<p><%= post.content %></p>
 				<p class="text text-muted">
-					<span class="post-like"> <%= image_tag "icon-like.png" %> 2 </span> 
+					<span class="post-like"> <%= show_total_post_likes_for(post) %> </span> 
 					<span class="float-right"> <%= show_total_post_comments_for post %>  </span> 
 				</p>
 			</div>
 			<div class="card-footer text-center py-2 px-3"> 
 				<span class="pr-4"> 
-					<%= link_to content_tag(:i, "Comments", class:"fa fa-comments pr-2"), '#', class:"btn btn-sm social-btn" %> 
+					<%= show_likeable_button_for_resource(post) %>
 				</span>
 				<span class="pr-4">
 					<%= link_to content_tag(:i, "Comments", class:"fa fa-comments pr-2"), '#', class:"btn btn-sm social-btn" %> 

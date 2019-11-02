@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 	resources :users, only: [:index, :show]
 	resources :posts, only: [:index,  :create, :edit, :update, :destroy]
 	resources :comments, only: [:create, :destroy]
+	resources :likes, only: [:create, :destroy]
 	
 	unauthenticated do
 		as :user do
