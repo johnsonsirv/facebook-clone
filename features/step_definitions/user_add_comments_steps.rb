@@ -1,5 +1,5 @@
 Given("I can see the first post in my timeline") do
- @post = FactoryBot.build(:post)
+ 	@post = FactoryBot.build(:post)
   within '.new-post' do
 		fill_in "post[content]", with: @post.content
 		click_button 'Post'
@@ -16,16 +16,4 @@ end
 
 Then("I should see my comment for first post in timeline") do
  expect(page).to have_content(@comment.content)
-end
-
-Given("I have added a comment to the first post") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-When("I delete comment") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then("post comment should no longer exist") do
-  pending # Write code here that turns the phrase above into concrete actions
 end
