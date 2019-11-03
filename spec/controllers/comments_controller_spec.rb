@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe CommentsController, type: :controller do
-	it { should use_before_action(:find_comment) }
+  it { should use_before_action(:find_comment) }
 end

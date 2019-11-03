@@ -1,31 +1,26 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.0'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
-# Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
-# Use Puma as the app server
 gem 'puma', '~> 3.11'
 
 # UI
 gem 'bootstrap', '~> 4.3.1'
+gem 'font-awesome-rails'
 gem 'jquery-rails'
-gem "font-awesome-rails"
-# Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-gem 'mini_racer', platforms: :ruby
 
-# Use CoffeeScript for .coffee assets and views
+gem 'mini_racer', platforms: :ruby
 gem 'coffee-rails', '~> 4.2'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+
 gem 'turbolinks', '~> 5'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
@@ -38,7 +33,6 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
 # Authenticaion and Configuration
@@ -47,40 +41,34 @@ gem 'figaro'
 gem 'omniauth-facebook'
 
 # util
-gem 'hirb'
 gem 'faker'
+gem 'hirb'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-	gem 'rspec-rails'
-	gem 'factory_bot_rails'
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails'
+  gem 'rspec-rails'
 end
 
 group :development do
-  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'web-console', '>= 3.3.0'
+  gem 'bullet', '~> 5.7', '>= 5.7.5'
+  gem 'guard'
+  gem 'guard-cucumber'
+  gem 'guard-rspec', require: false
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-	gem 'guard'
-	gem 'guard-rspec', require: false
-	gem 'guard-cucumber'
-	gem 'bullet', '~> 5.7', '>= 5.7.5'
 end
 
 group :test do
-  # Adds support for Capybara system testing and selenium driver
-	gem 'cucumber-rails', require: false
-  # database_cleaner is not required, but highly recommended
-  gem 'database_cleaner'
+  gem 'cucumber-rails', require: false
   gem 'capybara', '>= 2.15'
+  gem 'database_cleaner'
   gem 'selenium-webdriver'
-	gem 'webdrivers', '~> 4.0'
-	gem 'shoulda-matchers'
-	gem 'shoulda-callback-matchers', '~> 1.1.1'
+  gem 'shoulda-callback-matchers', '~> 1.1.1'
+  gem 'shoulda-matchers'
+  gem 'webdrivers', '~> 4.0'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
