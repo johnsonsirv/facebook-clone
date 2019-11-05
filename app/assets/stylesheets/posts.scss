@@ -13,6 +13,11 @@
 			&:hover{ background-color: #dadde1;}
 			i {letter-spacing: 2px; font-weight: bold;}
 		}
+		
+		.unlike-btn{background-color: $default-button-bg; color: #fff;
+			&:hover{background-color: $default-button-hover-bg; color: #fff; }
+			i {letter-spacing: 2px; font-weight: bold;}
+		}
 	}
 	textarea  { outline: none; resize: none; 
 		&:focus {
@@ -60,6 +65,7 @@
 }
 .comment-actions { font-size: 12px; 
 	a { color: $default-link-color; }
+	.unlike-link {font-weight: bold;}
 }
 
 .comment-editor {
