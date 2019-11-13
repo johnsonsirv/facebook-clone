@@ -7,6 +7,9 @@ RSpec.describe User, type: :model do
     it { should have_many(:posts).dependent(:destroy) }
     it { should have_many(:comments).dependent(:destroy) }
     it { should have_many(:likes).dependent(:destroy) }
+    it { should have_many(:friendships).dependent(:destroy) }
+    it { should have_many(:friends).
+				through(:friendships) }
   end
 
   it 'callbacks generate_gravatar_for_user before create' do

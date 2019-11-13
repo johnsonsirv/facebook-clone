@@ -4,7 +4,7 @@
     <div class="row">
       <% friends_for(user).each do |f| %>
         <div class="col-4 mt-2">
-           <div class="gravatar-30 mr-2 rounded-circle"> <%= gravatar_for(f, size: 30) </div>
+           <div class="gravatar-30 mr-2 rounded-circle"> <%= gravatar_for(f, size: 30) %> </div>
             <span> <%= link_to f.fullname, f %> </span>
         </div>
       <% end %>
