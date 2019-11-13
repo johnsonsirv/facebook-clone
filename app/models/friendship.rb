@@ -38,15 +38,15 @@ class Friendship < ApplicationRecord
   end
   
   def self.mutual_friends_between(user, other_user)
-     find_by_sql(["SELECT friendships.*
-      FROM friendships
-      WHERE friendships.user_id = ?
-      AND friendships.friend_id
-      IN ( SELECT friendships.friend_id
-            FROM friendships
-            WHERE friendships.user_id = ?
-            AND confirmed = ?
-          );", user.id, other_user.id, true]).map(&:friend)
+   find_by_sql(["SELECT friendships.*
+    FROM friendships
+    WHERE friendships.user_id = ?
+    AND friendships.friend_id
+    IN ( SELECT friendships.friend_id
+          FROM friendships
+          WHERE friendships.user_id = ?
+          AND confirmed = ?
+        );", user.id, other_user.id, true]).map(&:friend)
   end
   
   

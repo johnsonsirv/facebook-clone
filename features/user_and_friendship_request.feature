@@ -16,5 +16,6 @@ Scenario: Send a friend request
 
 Scenario: Accept friend request
   Given the user "user2demo@carry.com" logs in
+  And I have pending request from "demouser1@onet.com"
   When I accept request from "demouser1@onet.com"
   Then we should be friends
