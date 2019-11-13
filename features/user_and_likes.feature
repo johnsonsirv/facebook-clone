@@ -1,5 +1,5 @@
 Feature: User and likes
-	In add my reactions to posts and comments
+	In order to add my reactions to posts and comments
 	As a user
 	I want to like and unlike posts or comments
 

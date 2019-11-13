@@ -1,5 +1,5 @@
 Feature: Login as an existing User
-	In order view, add posts, comments and likes
+	In order to view, add posts, comments and likes
 	As a user
 	I want to log in with my email
 
