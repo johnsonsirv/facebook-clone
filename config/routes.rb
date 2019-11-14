@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get '/friends', to: 'friendships#index'
   get '/friend_requests', to: 'friendships#friend_requests'
   get '/mutual_friends', to: 'friendships#mutual_friends'
-  
+
   unauthenticated do
     as :user do
       root to: 'devise/registrations#new'

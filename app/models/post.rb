@@ -11,11 +11,11 @@ class Post < ApplicationRecord
                         .includes(:comments).includes(:likes)
                       }
   scope :authored_by_user_or_friends, lambda { |user|
-                         where(user_id: user)
-                         .or(where(user_id: Friendship.confirmed_friends_for(user)))
-                         .includes(:user).order(updated_at: :desc)
-                         .includes(:comments).includes(:likes)
-                      }
+                                        where(user_id: user)
+                                        .or(where(user_id: Friendship.confirmed_friends_for(user)))
+                                        .includes(:user).order(updated_at: :desc)
+                                        .includes(:comments).includes(:likes)
+                                      }
 
   validates :content, presence: true
 
