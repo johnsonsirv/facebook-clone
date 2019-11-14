@@ -10,11 +10,17 @@ class Post < ApplicationRecord
                         .order(updated_at: :desc)
                         .includes(:comments).includes(:likes)
                       }
+  scope :authored_by_user_or_friends, lambda { |user|
+                         where(user_id: user)
+                         .or(where(user_id: Friendship.confirmed_friends_for(user)))
+                         .includes(:user).order(updated_at: :desc)
+                         .includes(:comments).includes(:likes)
+                      }
 
   validates :content, presence: true
 
   def self.timeline_posts_for(user)
-    authored_by(user).order(updated_at: :desc)
+    authored_by_user_or_friends(user)
   end
 
   def update_post(post_params)
