@@ -17,4 +17,5 @@ RSpec.describe FriendshipsController, type: :controller do
     should route(:get, '/mutual_friends')
       .to(action: :mutual_friends)
   }
+  
 end
