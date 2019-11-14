@@ -7,7 +7,7 @@
 </li>
 <li class="nav-item"> <%= link_to 'Create', '#', class: "nav-link" %> </li>
 <li class="nav-item"> <%= link_to 'Find Friends', users_path, class: "nav-link" %> </li>
-<li class="nav-item"> <%= link_to content_tag(:i, '', class: "fa fa-users"), '#', title: 'Friend requests', class: "nav-link"  %> </li>
+<li class="nav-item"> <%= show_friend_request_icon current_user  %> </li>
 <li class="nav-item"> <%= link_to content_tag(:i, '', class: "fa fa-bell"), '#', title: 'Notifications', class: "nav-link"  %> </li>
 <li class="nav-item"> <%= link_to content_tag(:i, '', class: "fa fa-question-circle"), '#', title: 'Notifications', class: "nav-link"  %> </li>
 <li class="nav-item dropdown">

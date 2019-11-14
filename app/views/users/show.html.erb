@@ -6,10 +6,7 @@
 				<div class="row">
 					<div class="col-md-5 user-bio-friends">
 						<%= render 'bio', user: @user %>
-						<div class="card mt-3 p-2">
-							<h5> <span class="user-profile-icons"><%= image_tag 'user-friends.png' %></span>  Friends  </h5>
-							<p>Friendship information will appear here in Milestone 5</p>
-						</div>
+						<%= render 'user_friend', user: @user %>
 					</div>
 					<div class="col-md-7">
 						<%= render 'post_form' %>

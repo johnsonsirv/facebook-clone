@@ -1,6 +1,7 @@
-<div class="row m-2 p-0 border-bottom find-friends">	
-	<div class="col-md-2 p-0"> <div class="find-friends-gravatar border mb-3"> <%= gravatar_for(user) %></div></div>
-	<div class="col-md-4 p-0 pt-4"> <span> <%= link_to user.email, user %> </span> </div>
-	<div class="col-md-3 pt-4"> <button class="btn btn-sm custom-default-btn"> <i class="fa fa-user-plus"></i> Add friend </button> milestone 5 </div>
-	<div class="col-md-3 pt-4"> <button> <i class="fa fa-user-times"></i> Delete Request </button>  milestone 5 </div>
+<div class="row m-2 p-0 border-bottom">	
+	<div class="col-md-2 p-0"> <div class="find-friends-gravatar mb-3"> <%= gravatar_for(user) %></div></div>
+	<div class="col-md-4 p-0 pt-4"> <h5> <%= link_to user.fullname, user %> </h5> </div>
+	<div class="col-md-3 pt-4"> 
+     <%= show_banner_call_to_action_for(user, 'btn-sm custom-default-btn', 'btn-sm btn-secondary') %>
+  </div>
 </div>

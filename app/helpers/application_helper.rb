@@ -24,4 +24,38 @@ module ApplicationHelper
     resource.likes
             .find_by(user: current_user)
   end
+
+  def count_friend_request(user)
+    if request?(user)
+      return Friendship
+             .unconfirmed_friends_for(user).size
+    end
+
+    ''
+  end
+
+  def request?(user)
+    Friendship
+      .unconfirmed_friends_for(user).any?
+  end
+
+  def friend_requests_for(user)
+    Friendship.pending_requests.where(friend: user)
+              .order(created_at: :desc)
+              .limit(5).map(&:user)
+  end
+
+  def show_friend_request_icon(user)
+    if request?(user)
+      return link_to content_tag(:i, content_tag(:b, count_friend_request(user)),
+                                 class: 'fa fa-users has-request'), friend_requests_path,
+                     title: pluralize(count_friend_request(user), 'Friend request').to_s,
+                     class: 'nav-link'
+    end
+
+    link_to content_tag(:i, '', class: 'fa fa-users'),
+            friend_requests_path,
+            title: 'No Friend request',
+            class: 'nav-link'
+  end
 end

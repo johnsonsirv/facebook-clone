@@ -6,7 +6,7 @@ module PostsHelper
     #{change_post_date_for post}
     #{dropdown_item_divider}
     #{hide_from_timeline_for post}
-    #{delete_button_for post}".html_safe unless user_can_modify?(post)
+    #{delete_button_for post}".html_safe if user_can_modify?(post)
   end
 
   def user_can_modify?(post)
@@ -20,7 +20,7 @@ module PostsHelper
 
   def delete_button_for(resource)
     link_to 'Delete', resource,
-    method: delete,
+    method: :delete,
     data: { confirm: 'You are about to delete this post. Do you want to continue?' },
     class: 'dropdown-item text-danger'
   end

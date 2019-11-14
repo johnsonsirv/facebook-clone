@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :friendships, dependent: :destroy
+  has_many :friends, through: :friendships
 
   scope :all_except, ->(user) { where.not(id: user) }
 
@@ -23,6 +25,29 @@ class User < ApplicationRecord
 
   def add_new_comment(comment_params)
     comments.create(comment_params)
+  end
+
+  def request_new_friendship_with(other_user)
+    new_friend = User.find_by(id: other_user)
+    return 'Friend request sent' if friendships.create(friend: new_friend)
+  end
+
+  def pending_friend_request_from?(other_user)
+    Friendship.pending_requests
+              .where(friend: self)
+              .where(user: other_user).exists?
+  end
+
+  def pending_friend_request_to?(other_user)
+    Friendship.pending_requests
+              .where(user: self)
+              .where(friend: other_user).exists?
+  end
+
+  def friends_with?(other_user)
+    Friendship.confirmed
+              .where(user: self)
+              .where(friend: other_user).exists?
   end
 
   private

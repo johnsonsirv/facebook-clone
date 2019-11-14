@@ -1,5 +1,5 @@
 Feature: Log current user out
-	In order quit the application
+	In order to quit the application
 	As a user
 	I want to log off from all current activities
 

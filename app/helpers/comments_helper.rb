@@ -25,7 +25,7 @@ module CommentsHelper
 
   def delete_comment_for(resource)
     return link_to 'Delete', comment_path(resource),
-    method: :delete, class: 'pr-1' unless user_can_modify?(resource)
+    method: :delete, class: 'pr-1' if user_can_modify?(resource)
   end
 
   def user_can_modify?(comment)

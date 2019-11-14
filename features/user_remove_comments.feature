@@ -1,5 +1,5 @@
 Feature: User manage comments
-	In ad my reactions to posts
+	In order to add my reactions to posts
 	As a user
 	I want to add or remove comments
 

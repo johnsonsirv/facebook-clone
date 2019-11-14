@@ -1,5 +1,5 @@
 Feature: User manage posts
-	In order share my posts with friends
+	In order to share my posts with friends
 	As a user
 	I want to add, edit, remove posts
 

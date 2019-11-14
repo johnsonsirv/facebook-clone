@@ -13,8 +13,8 @@ end
 Then('I should see a list of users') do
   @user2 = User.second
   @user3 = User.third
-  expect(page).to have_content(@user2.email)
-  expect(page).to have_content(@user3.email)
+  expect(page).to have_content("#{@user2.firstname} #{@user2.lastname}")
+  expect(page).to have_content("#{@user3.firstname} #{@user3.lastname}")
 end
 
 Then('I should not see my profile') do
