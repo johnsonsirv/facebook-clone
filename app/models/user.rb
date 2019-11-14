@@ -26,28 +26,28 @@ class User < ApplicationRecord
   def add_new_comment(comment_params)
     comments.create(comment_params)
   end
-  
-   def request_new_friendship_with(other_user)
+
+  def request_new_friendship_with(other_user)
     new_friend = User.find_by(id: other_user)
     return 'Friend request sent' if friendships.create(friend: new_friend)
   end
-  
-  def has_pending_friend_request_from?(other_user)
-     Friendship.pending_requests
-    .where(friend: self)
-    .where(user: other_user).exists?
-  end
-  
-  def has_pending_friend_request_to?(other_user)
+
+  def pending_friend_request_from?(other_user)
     Friendship.pending_requests
-    .where(user: self)
-    .where(friend: other_user).exists?
+              .where(friend: self)
+              .where(user: other_user).exists?
   end
-  
+
+  def pending_friend_request_to?(other_user)
+    Friendship.pending_requests
+              .where(user: self)
+              .where(friend: other_user).exists?
+  end
+
   def friends_with?(other_user)
     Friendship.confirmed
-    .where(user: self)
-    .where(friend: other_user).exists?
+              .where(user: self)
+              .where(friend: other_user).exists?
   end
 
   private

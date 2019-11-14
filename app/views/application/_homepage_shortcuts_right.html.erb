@@ -3,7 +3,7 @@
 			<h7> Friend Requests </h7>
 			<div class="featured-friend-requests">
       <div class="container">
-       <% if has_request?(current_user) %>
+       <% if request?(current_user) %>
         <% friend_requests_for(current_user).each do |friend| %>
            <div class="row mt-3 border p-1">
               <div class="col-md-2 mr-2">

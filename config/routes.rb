@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   resources :posts, only: %i[index create edit update destroy]
   resources :comments, only: %i[create destroy]
   resources :likes, only: %i[create destroy]
-  resources :friendships, only: [:create, :update, :destroy]
-  
+  resources :friendships, only: %i[create update destroy]
+
   get '/friends', to: 'friendships#index'
   get '/friend_requests', to: 'friendships#friend_requests'
 

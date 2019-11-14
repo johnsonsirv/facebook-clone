@@ -1,4 +1,6 @@
-Given("the following users exists:") do |table|
+# frozen_string_literal: true
+
+Given('the following users exists:') do |table|
   i = 0
   list = []
   table.hashes.each do |record|
@@ -9,8 +11,8 @@ Given("the following users exists:") do |table|
   @user2 = list[1]
 end
 
-Given("{string} is logged in") do |current_user_email|
- visit new_user_session_path
+Given('{string} is logged in') do |_current_user_email|
+  visit new_user_session_path
   within '.default-user-login' do
     fill_in 'user[email]', with: @user1.email
     fill_in 'user[password]', with: @user1.password
@@ -18,16 +20,16 @@ Given("{string} is logged in") do |current_user_email|
   end
 end
 
-When("I send request to {string}") do |string|
+When('I send request to {string}') do |_string|
   visit user_path @user2
   click_link 'Add Friend'
 end
 
-Then("I should have pending request") do
-  expect(page).to have_content /Friend Request sent/
+Then('I should have pending request') do
+  expect(page).to have_content(/Friend Request sent/)
 end
 
-Given("the user {string} logs in") do |string|
+Given('the user {string} logs in') do |_string|
   visit new_user_session_path
   within '.default-user-login' do
     fill_in 'user[email]', with: @user2.email
@@ -36,15 +38,15 @@ Given("the user {string} logs in") do |string|
   end
 end
 
-Given("I have pending request from {string}") do |string|
+Given('I have pending request from {string}') do |_string|
   @friendship = Friendship.create(user: @user1, friend: @user2, confirmed: false)
 end
 
-When("I accept request from {string}") do |string|
+When('I accept request from {string}') do |_string|
   @friendship.update(confirmed: true)
 end
 
-Then("we should be friends") do
+Then('we should be friends') do
   visit user_path @user1
-  expect(page).to have_content /Friends/
+  expect(page).to have_content(/Friends/)
 end
