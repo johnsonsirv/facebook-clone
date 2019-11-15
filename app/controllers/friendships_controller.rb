@@ -25,4 +25,11 @@ class FriendshipsController < ApplicationController
     @friends = Friendship.unconfirmed_friends_for current_user
     render 'friends'
   end
+
+  def mutual_friends
+    other_user = User.find_by(id: params[:id])
+    return if current_user == other_user
+
+    @mutual_friends = Friendship.mutual_friends_between(user, other_user)
+  end
 end
