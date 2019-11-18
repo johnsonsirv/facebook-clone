@@ -23,3 +23,9 @@ Scenario: Login through the navigation form
 Scenario: Access Restricted pages
 	When I access post timeline
 	Then I should be redirected to login
+
+@omniauth_test
+Scenario: Sign in with facebook
+  Given I am signed in with facebook
+  Then I should see user firstname "omniauthfirstname"
+

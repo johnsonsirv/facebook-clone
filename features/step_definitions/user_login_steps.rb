@@ -55,3 +55,11 @@ end
 Then('I should be redirected to login') do
   expect(page).to have_current_path new_user_session_path
 end
+
+Given('I am signed in with facebook') do
+  visit user_facebook_omniauth_authorize_path
+end
+
+Then('I should see user firstname {string}') do |firstname|
+  expect(page).to have_text(firstname.titlecase)
+end
