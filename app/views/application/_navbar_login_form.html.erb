@@ -9,7 +9,7 @@
 			<div class=" custom-group mr-1">
 				<%= f.label :password %>
 				<%= f.password_field :password, placeholder: 'Password', autocomplete: "current-password", class: "custom-control" %>
-				<%= link_to "Sign in with Facebook", '#', class: "disabled" %> 
+				<%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %> 
 			</div>
 			<div class="mt-3">
     		<%= f.submit "Log In", class: "btn mt-2 btn-sm navbar-login-btn ml-1" %>
