@@ -54,14 +54,13 @@ class User < ApplicationRecord
   
   def self.from_omniauth(auth)
 		where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      # names = auth.info.name.split
-      user.firstname = auth.info.first_name
-      user.lastname = auth.info.last_name
+      names = auth.info.name.split
+      user.firstname = names.first
+      user.lastname = names.last
       user.email = auth.info.email
 			user.password = Devise.friendly_token[0, 20]
       user.sex = 'Custom'
       user.dob = 18.years.ago
-			user.image_link = auth.info.image
   	end
 	end
 	
