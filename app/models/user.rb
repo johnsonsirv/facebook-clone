@@ -50,24 +50,23 @@ class User < ApplicationRecord
               .where(user: self)
               .where(friend: other_user).exists?
   end
-  
-  
+
   def self.from_omniauth(auth)
-		where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       names = auth.info.name.split
       user.firstname = names.first
       user.lastname = names.last
       user.email = auth.info.email
-			user.password = Devise.friendly_token[0, 20]
+      user.password = Devise.friendly_token[0, 20]
       user.sex = 'Custom'
       user.dob = 18.years.ago
-  	end
-	end
-	
-	def self.new_with_session(params, session)
+    end
+  end
+
+  def self.new_with_session(params, session)
     super.tap do |user|
-      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
-        user.email = data["email"] if user.email.blank?
+      if data = session['devise.facebook_data'] && session['devise.facebook_data']['extra']['raw_info']
+        user.email = data['email'] if user.email.blank?
       end
     end
   end
