@@ -2,7 +2,9 @@
 
 This project is a minimalistic implementation of core facebook features. It explores funtionalities like ``creating account``, ``writing posts and comments (text only)``, ``liking and commenting`` on other people's posts, ``sending / accepting / canceling friend requests`` and ``semi-realtime`` friend request notifications.
 
-Profile management is minimal, real-time newsfeed, notifications, ads, and IM are not yet implemented.
+Profile management is minimal, real-time newsfeed, notifications, ads, and IM are yet to be implemented.
+
+User authentication was achieved using ``Devise`` and OAuth (omniauth-facebook).
 
 This project was completed in line with standards provided by [Microverse](https://www.microverse.org/ "The Global School for Remote Software Developers!").
 
@@ -44,9 +46,12 @@ in your terminal run
 
 ##### 3. Deployment
 
-Run ```rails server```
+Visit [Live URL](https://nzuko.herokuapp.com)
 
-You can interact with this app on ```localhost://3000```
+n localhost
+run ```rails server```
+
+Visit ```localhost://3000```
 
 ###### How to contribute
 1. Fork it (https://github.com/johnsonsirv/facebook-clone/fork)
