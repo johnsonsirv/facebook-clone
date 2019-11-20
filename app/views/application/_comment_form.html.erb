@@ -1,0 +1,14 @@
+<%= form_for Comment.new do |f| %>
+	<div class="mt-1">
+		<div class="py-1 d-flex flex-row">
+				<div class="gravatar-30 mr-2 rounded-circle"> <%= gravatar_for(current_user, size: 30) %> </div>
+				<div class="comment-body p-0"> 
+						<%= f.hidden_field :post_id, value: post.id %>
+						<%= f.text_area :content, class: "p-2", placeholder: 'Write a comment' %> 
+				</div>
+		</div>
+	</div>
+	<div class="float-right"> 
+			<span> <%= f.submit 'Comment', class: "btn btn-sm btn-comment mr-2" %> </span>
+	</div>
+<% end %>

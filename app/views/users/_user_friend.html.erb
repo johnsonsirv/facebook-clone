@@ -1,0 +1,25 @@
+<div class="card mt-3 p-2">
+  <h5> <span class="user-profile-icons"><%= image_tag 'user-friends.png' %></span>  Friends  </h5>
+    <% if friends?(user) %>
+    <div class="row">
+      <% friends_for(user).each do |f| %>
+        <div class="col-4 mt-2">
+           <div class="gravatar-30 mr-2 rounded-circle"> <%= gravatar_for(f, size: 30) %> </div>
+            <span> <%= link_to f.fullname, f %> </span>
+        </div>
+      <% end %>
+     </div>
+    <% else %>
+      <p> No friends yet </p>
+    <% end %>
+</div>
+
+<div class="card mt-1 p-2">
+  <% if mutual_friends_with?(user) %>
+    <% mutual_friends_with(user).each do |f| %>
+        <%= link_to f.fullname, f %>
+    <% end %>
+  <% else %>
+    <p> No mutual friends </p>
+  <% end %>
+</div>

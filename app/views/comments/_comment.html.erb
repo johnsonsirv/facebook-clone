@@ -1,0 +1,13 @@
+<div class="comments" id="<%= comment.id %>">
+	<div class="py-1 d-flex flex-row">
+			<div class="gravatar-30 mr-2 rounded-circle"> <%= gravatar_for(comment.user, size: 30) %></div>
+			<div class="comment-body pl-2 pt-1 pb-2"> 
+				<span class="comment-author"> <%= link_to comment.user.fullname, comment.user, class: "" %> </span> 
+				<span class=""> <%= comment.content %> </span> 
+			</div>
+	</div>
+	<div class="comment-actions ml-5">
+		<%= show_comment_actions_for(comment) %> 
+		<span class="text text-muted"> <%= time_ago_in_words(comment.created_at, include_seconds: true) %></span>
+	</div>
+</div>

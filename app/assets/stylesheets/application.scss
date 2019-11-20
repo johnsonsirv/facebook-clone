@@ -1,0 +1,89 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+@import "bootstrap";
+@import "font-awesome";
+
+$blue-navbar-bg: #3b5998;
+$default-theme-bg: #e9ebee;
+$default-banner-bg: #e9ebee;
+$default-button-bg: #4267b2;
+$default-button-hover-bg: #2851A3;
+$default-link-color: #4267b2;
+
+body { background: $default-theme-bg; font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif !important; }
+nav { 
+		background-color: $blue-navbar-bg; 
+		background-image: linear-gradient(#4e69a2, #3b5998 50%);
+    border-bottom: 1px solid #133783; 
+		color: #fff; 
+	
+	.navbar-brand {font-weight: bold; color: #fff; font-size: 2em;}
+	
+	li a {
+		color: #fff;
+		font-weight: bold;
+		font-size: 13px;
+		i {
+			color: #000;
+		}
+    .has-request {
+      color: #fff;
+      font-size: 15px;
+      b { color: #e50000; font-size: 18px; }
+    }
+	}
+	a:hover{
+		color: #eee;
+	}
+	#navbarDropdown{
+		color: #000;
+	}
+	
+	.navbar-login-btn {
+		background-color: #4267b2; 
+		border-color: #29487d; 
+		color: #fff; 
+		font-weight: bold;
+		font-size: 12px;
+		&:hover{
+			background-color: $default-button-hover-bg;
+			border-color: #29487d; 
+			color: #fff; 
+			font-weight: bold;
+		}
+	}
+	
+	.custom-form {width: 23em; height:5em; }
+	.custom-group { width: 60%;
+		label {font-size: 11px;  padding: 0; margin:0; }
+		a { font-size: 11px; color: #9cb4d8; }
+		.custom-control {outline: none; 
+			border: solid 1px; 
+			height: 2em; 
+			width: 100%; 
+			font-size: 11px; 
+			padding: 2px; 
+			margin:0;
+		}
+	}
+	
+	.navbar-gravatar { img{ width: 30px; height: 30px; border-radius: 50%; }  width: 30px; height: 30px;}
+}
+// color: #999; form-text
+.terms-condition { color: #777;  font-size: 11px; }
+
+	@import "fb_custom";
+	@import "posts";
+	@import "users";

@@ -1,0 +1,18 @@
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="d-flex flex-row custom-form p-0">
+		 <div class="custom-group mr-2">
+				<%= f.label :email %>
+				<%= f.email_field :email, autofocus: true, placeholder: 'Email', autocomplete: "email", class: "custom-control" %>
+				<%= link_to "Forgot account?", '#' %>
+			</div>
+			<div class=" custom-group mr-1">
+				<%= f.label :password %>
+				<%= f.password_field :password, placeholder: 'Password', autocomplete: "current-password", class: "custom-control" %>
+				<%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %> 
+			</div>
+			<div class="mt-3">
+    		<%= f.submit "Log In", class: "btn mt-2 btn-sm navbar-login-btn ml-1" %>
+			</div>
+	</div>
+<% end %>

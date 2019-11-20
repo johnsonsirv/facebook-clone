@@ -1,0 +1,21 @@
+<h6 class="text text-center my-3"> Log into facebook</h6>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+ <div class="form-group">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: "Email" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.password_field :password, autocomplete: "current-password", class: 'form-control', placeholder: "Password" %>
+  </div>
+
+
+  <div class="form-group">
+    <%= f.submit "Log In", class: "btn btn-lg btn-block custom-default-btn", title: "Log in" %>
+		<p class="my-3 text-center">
+			<%= link_to "Forgot account?", '#', class: "text text-primary" %>
+			<%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class: "text text-primary disabled", id: "omniauth-btn" %> <br>
+			<%= link_to 'Create new Account', new_user_registration_path, class: "text text-primary" %>
+		</p>
+  </div>
+<% end %>

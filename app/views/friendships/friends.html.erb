@@ -1,0 +1,37 @@
+<div class="container mt-3">
+	<div class="row">
+		<div class="col-9 ml-auto mr-auto">
+			<div class="card my-3">
+					<div class="card-header py-1"> <h5> Friend Requests </h5></div>
+					<div class="card-body mx-2 p-1">
+						<% @friends.each do |friend| %>
+            <div class="row m-2 p-0 border-bottom">	
+              <div class="col-md-2 p-0"> 
+                <div class="find-friends-gravatar mb-3"> 
+                  <%= gravatar_for(friend) %>
+                </div>
+              </div>
+                <div class="col-md-3 p-0 pt-4"> 
+                  <h5> <%= link_to friend.fullname, friend %> </h5> 
+                </div>
+                <div class="col-md-3 pt-4"> 
+                   <i class="fa fa-user-plus"></i> 
+                    <%= link_to 'Confirm Friend', friendship_path(friend),  
+                    method: :patch, class: "btn  btn-sm custom-default-btn", 
+                    title: "Confirm friend request" %>
+                </div>
+                <div class="col-md-4 pt-4"> 
+                   <i class="fa fa-user-times"></i>
+                    <%= link_to 'Remove Request', friendship_path(friend),  
+                    method: :delete, 
+                    data: { confirm: 'Are you sure you want to remove this request?' },
+                    class: "btn btn-sm btn-secondary", 
+                    title: "Delete friend request" %>
+                </div>
+              </div>
+            <% end %>
+					</div>
+				</div>
+		</div>
+	</div>
+</div>
