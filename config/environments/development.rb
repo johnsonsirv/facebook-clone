@@ -9,6 +9,7 @@ Rails.application.configure do
     # Bullet.growl         = true
     Bullet.rails_logger  = true
     Bullet.add_footer    = true
+    Bullet.add_whitelist :type => :unused_eager_loading, :class_name => "Friendship", :association => :user
   end 
   # Settings specified here will take precedence over those in config/application.rb.
 
