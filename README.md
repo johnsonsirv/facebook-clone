@@ -4,7 +4,7 @@ This project is a minimalistic implementation of core facebook features. It expl
 
 Profile management is minimal, real-time newsfeed, notifications, ads, and IM are yet to be implemented.
 
-Authentication was done with ``Devise`` and OAuth (omniauth-facebook).
+User authentication was achieved using ``Devise`` and OAuth (omniauth-facebook).
 
 This project was completed in line with standards provided by [Microverse](https://www.microverse.org/ "The Global School for Remote Software Developers!").
 
