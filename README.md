@@ -12,6 +12,7 @@
   </a>
   <a href="https://twitter.com/vokeugo" target="_blank">
     <img alt="Twitter: vokeugo" src="https://img.shields.io/twitter/follow/vokeugo.svg?style=social" />
+  </a>
 </p>
 
 <br>
@@ -37,7 +38,7 @@ It explores functionalities like:
     <img alt="Website" src="./docs/fb-timeline.png" />
   </a>
   <a href="https://nzuko.herokuapp.com/" target="_blank">
-    <img alt="Website" src="./docs/facebook-clone ERD.png" />
+    <img alt="ERD" src="./docs/facebook-clone ERD.png" />
   </a>
 </p>
 
