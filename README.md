@@ -31,18 +31,17 @@ It explores functionalities like:
 - User authorization for posts and comments
 </p>
 <p>
-  <a href="https://nzuko.herokuapp.com/" target="_blank">
-    <img alt="Website" src="./docs/profile-page-1.png" />
-  </a>
-   <a href="https://nzuko.herokuapp.com/" target="_blank">
-    <img alt="Website" src="./docs/fb-timeline.png" />
-  </a>
+    <img alt="profile screenshot" src="./docs/profile-page-1.png" />
+</p>
+<p>
+    <img alt="timeline-screenshot" src="./docs/fb-timeline.png" />
+</p>
+
+<p>
   <a href="https://nzuko.herokuapp.com/" target="_blank">
     <img alt="ERD" src="./docs/facebook-clone ERD.png" />
   </a>
 </p>
-
-<br>
 
 ### Future implementations:
 
