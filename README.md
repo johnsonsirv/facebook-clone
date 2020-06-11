@@ -30,12 +30,10 @@ It explores functionalities like:
 - User authentication using `Devise` and OAuth (omniauth-facebook)
 - User authorization for posts and comments
 </p>
-<p>
-    <img alt="profile screenshot" src="./docs/profile-page-1.png" />
-</p>
-<p>
-    <img alt="timeline-screenshot" src="./docs/fb-timeline.png" />
-</p>
+
+![](/docs/profile-page-1.png)
+
+![](/docs/fb-timeline.png)
 
 <p>
   <a href="https://nzuko.herokuapp.com/" target="_blank">
