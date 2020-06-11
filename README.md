@@ -31,9 +31,9 @@ It explores functionalities like:
 - User authorization for posts and comments
 </p>
 
-![](/docs/profile-page-1.png)
+![](./docs/profile-page-1.png)
 
-![](/docs/fb-timeline.png)
+![](./docs/fb-timeline.png)
 
 <p>
   <a href="https://nzuko.herokuapp.com/" target="_blank">
