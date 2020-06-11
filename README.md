@@ -31,9 +31,9 @@ It explores functionalities like:
 - User authorization for posts and comments
 </p>
 
-![](./docs/profile-page-1.png)
+![](https://github.com/johnsonsirv/facebook-clone/blob/master/docs/profile-page-1.PNG)
 
-![](./docs/fb-timeline.png)
+![](https://github.com/johnsonsirv/facebook-clone/blob/master/docs/fb-timeline.PNG)
 
 <p>
   <a href="https://nzuko.herokuapp.com/" target="_blank">
